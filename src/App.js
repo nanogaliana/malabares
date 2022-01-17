@@ -1,6 +1,7 @@
 import './App.css';
-import NavBar from './components/NavBar';
 import logo from './images/logo.png';
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <h1>Malabares Galiana</h1>
       </header>
       <NavBar />
+      <ItemListContainer content="Catálogo de Productos"/>
     </div>
   );
 }

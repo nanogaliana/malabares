@@ -1,14 +1,14 @@
 import './styles.css';
 import CartWidget from '../CartWidget';
 
-const NavBar = () => {
+const NavBar = ({total}) => {
   return (
     <nav className='navbar'>
       <p>Inicio</p>
       <p>Productos</p>
       <p>FAQ</p>
       <p>Contacto</p>
-      <CartWidget/>
+      <CartWidget total={total}/>
     </nav>
   );
 }

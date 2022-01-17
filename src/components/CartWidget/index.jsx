@@ -2,9 +2,12 @@ import React from 'react'
 import {BsCart3} from 'react-icons/bs'
 import './styles.css';
 
-const CartWidget = () => {
+const CartWidget = ({total}) => {
     return (
-        <BsCart3 className='cartIcon' />
+        <div className='cart'>
+            <BsCart3 className='cartIcon' />
+            <span className='cartTotal'>{total}</span>
+        </div>
     )
 }
 

@@ -1,0 +1,7 @@
+.navbar {
+    background-color: #282c34;
+    color: aquamarine;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

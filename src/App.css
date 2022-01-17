@@ -25,14 +25,22 @@ blockquote, q {quotes:none;}
 blockquote:before, blockquote:after, q:before, q:after {content:'';	content:none;}
 
 /*** CONTROLS ***/
-a                                        {text-decoration:none; color:#f78ef7;}
-a:link                                   {text-decoration:none;}
-a:hover                                  {cursor:pointer; text-decoration:none; color:#f78ef7;}
-a:focus                                  {color:#f78ef7;}
-a:visited                                {color:#f78ef7;}
+a             {text-decoration:none; color:#f78ef7;}
+a:link        {text-decoration:none;}
+a:hover       {cursor:pointer; text-decoration:none; color:#f78ef7;}
+a:focus       {color:#f78ef7;}
+a:visited     {color:#f78ef7;}
 
 /*** HEADER ***/
-.App-header {padding:10px; margin:0 auto; background-color: #282c34; min-height:20vh;} /*font-size: calc(10px + 2vmin);*/
-.App-logo {float:left; height:60px;  pointer-events: none;}   /*height: 15vmin;*/
-.App-header h1 {float:left; margin-left:10px; color: darkorange; font-family: cursive; font-size: 30px;  width: 150px;}
-ul.navbar {float:right; clear:both;  display: flex; list-style: none; grid-gap: 20px; align-items: center;}
+.App-logo {height: 40vmin; pointer-events: none;}
+.App-header {background-color: #282c34;
+	min-height: 12vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: calc(10px + 2vmin);
+  }
+.App-logo {height: 10vmin; pointer-events: none;}
+.App-header h1 {color: darkorange; font-family: cursive; width: 150px;}

@@ -1,22 +1,13 @@
-import React from 'react';
+import './styles.css';
 
-//ver si esto es un componente funcional
-const NavBar= () =>{
+const NavBar = () => {
   return (
-  <ul className='navbar'>
-    <li>
-      <a href="/">Inicio</a>
-    </li>
-    <li>
-      <a href="/productos">Productos</a>
-    </li>
-    <li>
-      <a href="/preguntas-frecuentes">FAQ</a>
-    </li>
-    <li>
-      <a href="/contacto">Contacto</a>
-    </li>
-  </ul>
+    <nav className='navbar'>
+      <p>Inicio</p>
+      <p>Productos</p>
+      <p>FAQ</p>
+      <p>Contacto</p>
+    </nav>
   );
 }
 export default NavBar;

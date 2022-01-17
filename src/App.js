@@ -1,6 +1,6 @@
-import logo from './images/logo.png';
 import './App.css';
-import NavBar from "./components/NavBar";
+import NavBar from './components/NavBar';
+import logo from './images/logo.png';
 
 function App() {
   return (
@@ -8,8 +8,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Malabares Galiana</h1>
-        <NavBar />
       </header>
+      <NavBar />
     </div>
   );
 }

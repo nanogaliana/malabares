@@ -18,7 +18,7 @@ function App() {
         <h1>Malabares Galiana</h1>
       </header>
       <NavBar total={total}/>
-      <ItemListContainer content="Catálogo de Productos" onAddCallback={agregarAlCarrito}/>
+      <ItemListContainer onAddCallback={agregarAlCarrito}/>
     </div>
   );
 }

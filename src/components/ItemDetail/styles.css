@@ -1,0 +1,29 @@
+.productDetail {
+    border: 4px dashed darkorchid;
+    width: 80vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.productDetail img {
+    width: 45%;
+}
+.productDetail .detalles {
+    margin-left: 2vh;
+}
+.productDetail .detalles h2 {
+    font-weight: bold;
+}
+.productDetail .detalles label {
+    display: inline-block;
+    width: 13ex;
+    font-size: 2vh;
+}
+.productDetail .detalles input, .productDetail .detalles textarea {
+    border: none;
+    font-size: 2vh;
+}
+.productDetail .detalles textarea {
+    vertical-align: top;
+    overflow-y: hidden;
+}

@@ -8,7 +8,6 @@ function App() {
   const [total, setTotal] = useState(0)
   const agregarAlCarrito = (cantidad) => {
     setTotal(total+cantidad)
-    console.log('cantidad:' + cantidad + ' total:' + total)
   }
 
   return (

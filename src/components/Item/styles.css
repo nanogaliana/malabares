@@ -5,10 +5,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
 }
 .product img {
-    height: 80%;
-    width: 80%;
+    width: 75%;
     margin-bottom: 0.8vh;
 }
 .product p {

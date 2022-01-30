@@ -27,10 +27,10 @@ const ItemCount = ({stockInicial, cantidadInicial, onAddCallback}) => {
     return (
         <div className='contador'>
             <div className='contador__stock'>disponible: {stock}</div>
-            <button className='contador__operador' onClick={restar}>-</button>
+            <button className='btn contador__operador' onClick={restar}>-</button>
             <div className='contador__cantidad'>{cantidad}</div>
-            <button className='contador__operador' onClick={sumar}>+</button>
-            <button className='contador__agregarCarrito' onClick={agregarAlCarrito}>Agregar al carrito</button>
+            <button className='btn contador__operador' onClick={sumar}>+</button>
+            <button className='btn contador__agregarCarrito' onClick={agregarAlCarrito}>Agregar al carrito</button>
         </div>
     )
 }

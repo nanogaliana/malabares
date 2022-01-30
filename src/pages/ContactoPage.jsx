@@ -1,8 +1,9 @@
 import { useState } from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const ContactoPage = () => {
-  
+  const navigate = useNavigate();
+
   const [enviado, setEnviado] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +24,7 @@ const ContactoPage = () => {
     <div className="contacto">
       <p>Antes de escribir, por favor lea las <Link to="/preguntas-frecuentes">preguntas frecuentes</Link></p>
 
-      <form action="contacto" onSubmit={handleSubmit} method="POST">
+      <form onSubmit={handleSubmit} method="POST">
         <h1>Formulario de Contacto</h1>
         <div>
           <label htmlFor="nombre">Nombre:</label>
@@ -37,7 +38,8 @@ const ContactoPage = () => {
           <label htmlFor="consulta">Consulta:</label>
           <textarea name="consulta" />
         </div>
-        <button type="submit">Enviar</button>
+        <button className="btn" type="submit">Enviar</button>
+        <button className="btn" onClick={() => navigate(-1)}>Volver</button>
       </form>
     </div>
   );

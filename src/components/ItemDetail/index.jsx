@@ -1,12 +1,14 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './styles.css';
 import ItemCount from '../ItemCount';
 
 const ItemDetail = ({product, onAddCallback}) => {
+    const navigate = useNavigate();
+
     return (
         <div className='productDetail'>
             <img src={product.img} alt={product.name} />
-            <div className='detalles'>
+            <div className='detalles sombra'>
                 <h2>{product.name}</h2>
                 <div>
                     <label htmlFor="descripcion">Descripción:</label>
@@ -26,10 +28,11 @@ const ItemDetail = ({product, onAddCallback}) => {
                 </div>
                 <div>
                     <label htmlFor="valor">Valor:</label>
-                    <input name="valor" type="text" defaultValue={product.price}/>
+                    <input name="valor" type="text" defaultValue={'$ ' + product.price}/>
                 </div>
 
-                <ItemCount stockInicial={15} cantidadInicial={1} onAddCallback={onAddCallback}/>
+                <ItemCount stockInicial={product.stock} cantidadInicial={1} onAddCallback={onAddCallback}/>
+                <button className="btn" onClick={() => navigate(-1)}>Volver</button>
             </div>
         </div>
     )

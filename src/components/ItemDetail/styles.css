@@ -9,6 +9,9 @@
 }
 .productDetail .detalles {
     width: 50%;
+    border: 1px solid aliceblue;
+    border-radius: 6px;
+    padding: 1ex;
 }
 .productDetail .detalles h2 {
     font-weight: bold;

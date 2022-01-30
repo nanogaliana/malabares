@@ -1,5 +1,4 @@
 import { useState,useEffect } from 'react'
-import { getProducto } from "../../database/productos";
 import { ImSpinner9 } from 'react-icons/im';
 import ItemDetail from '../ItemDetail';
 import './styles.css';
@@ -9,22 +8,13 @@ const ItemDetailContainer = ({productId, onAddCallback}) => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true);
-    getProducto(productId)
-      .then((data) => setProduct(data))
-      .catch((error) => console.error(error))
-      .finally(() => setIsLoading(false));
-  }, [productId, onAddCallback]);
-
-/*   useEffect(() => {
-    const URL = `http://localhost:3001/productos/${productId}`;
+    const URL = `http://localhost:3001/products/${productId}`;
     setIsLoading(true);
     fetch(URL)
-      .then((res) => res.json())
+      .then((rta) => rta.json())
       .then((data) => setProduct(data))
       .finally(() => setIsLoading(false));
-  }, [productId]);
-  if (isLoading || !product) return <p>Cargando...</p>; */
+  }, [productId, onAddCallback]);
 
   return (
     <div className='productDetailWrapper'>

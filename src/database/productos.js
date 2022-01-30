@@ -61,7 +61,9 @@ export const PRODUCTS = [
     },
   ];
   
-  export function getProductos() {
+  export function getProductos(categoryId) {
+    console.log('categoria:' + categoryId);
+
     return new Promise((resolve, reject) => {
       setTimeout(() => resolve(PRODUCTS), 3000);
     });
@@ -69,7 +71,9 @@ export const PRODUCTS = [
   
   export function getProducto(productId) {
     return new Promise((resolve, reject) => {
-      let item = PRODUCTS.find(o => o.id === productId);
-      setTimeout(() => resolve(item), 2000);
+      //PRODUCTS.forEach(function(item) { console.log(item) });
+      //if (typeof productId == 'string') console.log(typeof productId);
+      let item = PRODUCTS.find(o => o.id === Number(productId));
+      setTimeout(() => resolve(item), 1500);
     });
   }

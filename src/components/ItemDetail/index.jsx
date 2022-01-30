@@ -1,7 +1,8 @@
 import React from 'react';
 import './styles.css';
+import ItemCount from '../ItemCount';
 
-const ItemDetail = ({product}) => {
+const ItemDetail = ({product, onAddCallback}) => {
     return (
         <div className='productDetail'>
             <img src={product.img} alt={product.name} />
@@ -9,7 +10,7 @@ const ItemDetail = ({product}) => {
                 <h2>{product.name}</h2>
                 <div>
                     <label htmlFor="descripcion">Descripción:</label>
-                    <textarea name="descripcion" type="text" defaultValue={product.description}/>
+                    <input name="descripcion" type="text" defaultValue={product.description}/>
                 </div>
                 <div>
                     <label htmlFor="material">Material:</label>
@@ -27,6 +28,8 @@ const ItemDetail = ({product}) => {
                     <label htmlFor="valor">Valor:</label>
                     <input name="valor" type="text" defaultValue={product.price}/>
                 </div>
+
+                <ItemCount stockInicial={15} cantidadInicial={1} onAddCallback={onAddCallback}/>
             </div>
         </div>
     )

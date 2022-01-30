@@ -25,11 +25,9 @@ blockquote, q {quotes:none;}
 blockquote:before, blockquote:after, q:before, q:after {content:'';	content:none;}
 
 /*** CONTROLS ***/
-a             {text-decoration:none; color:#f78ef7;}
+a             {text-decoration:none;}
 a:link        {text-decoration:none;}
-a:hover       {cursor:pointer; text-decoration:none; color:#f78ef7;}
-a:focus       {color:#f78ef7;}
-a:visited     {color:#f78ef7;}
+a:hover       {cursor:pointer; text-decoration:none;}
 
 /*** HEADER ***/
 .App-logo {height: 40vmin; pointer-events: none;}
@@ -43,10 +41,15 @@ a:visited     {color:#f78ef7;}
 	font-size: calc(10px + 2vmin);
   }
 .App-logo {height: 10vmin; pointer-events: none;}
-.App-header h1 {color: darkorange; font-family: cursive; width: 150px;}
+.App-header a {color: darkorange; font-family: cursive; width: 150px;}
+
+.App-content {display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /*** SPINNER ***/
-.spinner {animation: spin infinite 3s linear;}
+.spinner {animation: spin infinite 3s linear; margin-left:1ex;}
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -55,3 +58,11 @@ a:visited     {color:#f78ef7;}
     transform: rotate(360deg);
   }
 }
+
+h1 {font-weight: bold; margin-bottom: 1vh;}
+
+.contacto form          {margin-top: 2vh; }
+.contacto form label    {display:inline-block; width:15ex;}
+
+.preguntasFrecuentes    {padding: 2vh;}
+.preguntasFrecuentes h3 {margin-top: 2vh; font-style: italic;}

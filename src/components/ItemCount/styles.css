@@ -8,8 +8,6 @@
     align-items: center;
     align-content: center;
     border: 1px solid #CCC;
-
-    position: absolute; right: 20px; bottom: 20px; /*TEMPORAL HASTA DEFINIR POSICION*/
 }
 .contador__stock {
     width: 100%;

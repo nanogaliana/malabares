@@ -1,7 +1,12 @@
 .navbar {
     background-color: #282c34;
-    color: aquamarine;
+    color: #f78ef7;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+
+.navbar a             {color:#f78ef7;}
+.navbar a:hover       {text-shadow: 0px 0px 9px rgba(247,142,247,0.91);}
+.navbar a:focus       {color:#f78ef7;}
+.navbar a:visited     {color:#f78ef7;}

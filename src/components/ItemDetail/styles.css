@@ -1,15 +1,14 @@
 .productDetail {
-    border: 4px dashed darkorchid;
-    width: 80vh;
+    width: 100vh;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 .productDetail img {
-    width: 45%;
+    width: 50%;
 }
 .productDetail .detalles {
-    margin-left: 2vh;
+    width: 50%;
 }
 .productDetail .detalles h2 {
     font-weight: bold;

@@ -15,7 +15,6 @@ const ItemCount = ({stockInicial, cantidadInicial, onAddCallback}) => {
         }
     }
     const agregarAlCarrito = (event) => {
-        console.log(event);
         event.preventDefault();
         if (cantidad > 0) {
             setStock(stock - cantidad)

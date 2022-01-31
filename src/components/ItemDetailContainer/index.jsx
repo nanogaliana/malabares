@@ -3,7 +3,7 @@ import { ImSpinner9 } from 'react-icons/im';
 import ItemDetail from '../ItemDetail';
 import './styles.css';
 
-const ItemDetailContainer = ({productId, onAddCallback}) => {
+const ItemDetailContainer = ({productId}) => {
   const [product, setProduct] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
@@ -14,7 +14,7 @@ const ItemDetailContainer = ({productId, onAddCallback}) => {
       .then((rta) => rta.json())
       .then((data) => setProduct(data))
       .finally(() => setIsLoading(false));
-  }, [productId, onAddCallback]);
+  }, [productId]);
 
   return (
     <div className='productDetailWrapper'>
@@ -23,7 +23,7 @@ const ItemDetailContainer = ({productId, onAddCallback}) => {
           <ImSpinner9 className="spinner" />
         </div>
       ) : (
-        <ItemDetail product={product} onAddCallback={onAddCallback}/>
+        <ItemDetail product={product} />
       )}
     </div>
   )

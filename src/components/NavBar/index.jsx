@@ -2,7 +2,7 @@ import './styles.css';
 import {Link} from "react-router-dom";
 import CartWidget from '../CartWidget';
 
-const NavBar = ({total}) => {
+const NavBar = () => {
   return (
     <nav className='navbar'>
       <Link to="/">Inicio</Link>
@@ -10,7 +10,7 @@ const NavBar = ({total}) => {
       <Link to="/categoria/esferas">Esferas</Link>
       <Link to="/categoria/clavas">Clavas</Link>
       <Link to="/contacto">Contacto</Link>
-      <CartWidget total={total}/>
+      <CartWidget total={0}/>
     </nav>
   );
 }

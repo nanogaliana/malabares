@@ -1,9 +1,16 @@
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react'
 import './styles.css';
 import ItemCount from '../ItemCount';
 
-const ItemDetail = ({product, onAddCallback}) => {
+const ItemDetail = ({product}) => {
     const navigate = useNavigate();
+
+    const [cantidadCarrito, setCantidadCarrito] = useState(0);
+    const agregarCantidadAlCarrito = (cantidad) => {
+      console.log('Agrego productId:' + product.id + ' cantidad:' + cantidad);
+      setCantidadCarrito(cantidad);
+    }
 
     return (
         <div className='productDetail'>
@@ -31,7 +38,15 @@ const ItemDetail = ({product, onAddCallback}) => {
                     <input name="valor" type="text" defaultValue={'$ ' + product.price}/>
                 </div>
 
-                <ItemCount stockInicial={product.stock} cantidadInicial={1} onAddCallback={onAddCallback}/>
+                {cantidadCarrito === 0 ? (
+                    <ItemCount stockInicial={product.stock} cantidadInicial={1} onAddCallback={agregarCantidadAlCarrito}/>
+                ) : (
+                    <>
+                        <p className='info'>Se agregaron {cantidadCarrito} unidades al carrito</p>
+                        <button className="btn" onClick={() => navigate('/carrito')}>Ver Carrito</button>
+                    </>
+                )}
+                
                 <button className="btn" onClick={() => navigate(-1)}>Volver</button>
             </div>
         </div>

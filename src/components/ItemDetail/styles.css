@@ -29,3 +29,6 @@
     vertical-align: top;
     overflow-y: hidden;
 }
+.productDetail .detalles .info {
+    font-size: 2vh;
+}

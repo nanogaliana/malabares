@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
 import ItemDetailContainer from "../components/ItemDetailContainer";
 
-const ProductoPage = ({onAddCallback}) => {
+const ProductoPage = () => {
   const { productId } = useParams();
 
   return (
-    <ItemDetailContainer productId={productId} onAddCallback={onAddCallback}/>
+    <ItemDetailContainer productId={productId} />
   );
 }
 

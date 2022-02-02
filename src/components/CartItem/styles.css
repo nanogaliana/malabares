@@ -1,0 +1,14 @@
+.row {
+    font-size: calc(8px + 2vmin);
+    border-bottom: 1px dashed cadetblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.row img {
+    width: 10%;
+}
+.row .name {
+    font-weight: bold;
+}

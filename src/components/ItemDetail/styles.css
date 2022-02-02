@@ -32,3 +32,8 @@
 .productDetail .detalles .info {
     font-size: 2vh;
 }
+.productDetail .contador {
+    padding-top: 1ex;
+    margin-top: 1.5ex;
+    border-top: 1px dashed #CCC;
+}

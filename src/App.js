@@ -10,34 +10,37 @@ import PreguntasPage from './pages/PreguntasPage';
 import ContactoPage from './pages/ContactoPage';
 import CarritoPage from './pages/CarritoPage';
 import NotFoundPage from "./pages/NotFoundPage";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Link to="/">Malabares Galiana</Link>
-      </header>
-      <NavBar />
-      <div className="App-content">
-        <Routes>
-          <Route path="/">
-            <Route index element={<HomePage />} />
-            <Route path="productos">
-              <Route index element={<ProductosPage/>} />
-              <Route path=":productId" element={<ProductoPage />} />
+    <CartProvider>
+      <BrowserRouter>
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <Link to="/">Malabares Galiana</Link>
+        </header>
+        <NavBar />
+        <div className="App-content">
+          <Routes>
+            <Route path="/">
+              <Route index element={<HomePage />} />
+              <Route path="productos">
+                <Route index element={<ProductosPage/>} />
+                <Route path=":productId" element={<ProductoPage />} />
+              </Route>
+              <Route path="categoria">
+                <Route path=":categoryId" element={<CategoriaPage />} />
+              </Route>
+              <Route path="contacto" element={<ContactoPage />} />
+              <Route path="preguntas-frecuentes" element={<PreguntasPage />} />
+              <Route path="carrito" element={<CarritoPage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Route>
-            <Route path="categoria">
-              <Route path=":categoryId" element={<CategoriaPage />} />
-            </Route>
-            <Route path="contacto" element={<ContactoPage />} />
-            <Route path="preguntas-frecuentes" element={<PreguntasPage />} />
-            <Route path="carrito" element={<CarritoPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
-      </div>
-    </BrowserRouter>
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

@@ -11,7 +11,7 @@ const ItemListContainer = ({categoryId}) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log('categoria:' + categoryId);
+    console.log('categoria:' + (categoryId === undefined? 'TODOS': categoryId));
     let url = URLbase + (categoryId === undefined? '': '?category=' + categoryId);
 
     setIsLoading(true);

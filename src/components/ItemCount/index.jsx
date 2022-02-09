@@ -29,7 +29,7 @@ const ItemCount = ({stockInicial, cantidadInicial, onAddCallback, existeEnCarrit
             <div className='contador__cantidad'>{cantidad}</div>
             <button className='btn contador__operador' onClick={sumar}>+</button>
             <button className='btn contador__agregarCarrito' onClick={agregarAlCarrito}> {existeEnCarrito?'Actualizar':'Agregar al carrito'} </button>
-
+            
             <div className='contador__stock'>disponible: {stockInicial}</div>
         </div>
     )

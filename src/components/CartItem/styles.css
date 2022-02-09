@@ -6,9 +6,31 @@
     justify-content: space-between;
     align-items: center;
 }
-.row img {
+.row img, .row .img {
     width: 10%;
 }
 .row .name {
     font-weight: bold;
+    width: 35%;
+}
+.row .link {
+    display: block;
+    font-size: 60%;
+}
+.row .contador {
+    width: 25%;
+}
+.row .total {
+    width: 15%;
+    text-align: right;
+}
+
+.summary {
+    font-weight: bold;
+    border-bottom: none;
+    min-height: 50px;
+}
+.row .articulos {
+    width: 25%;
+    font-size: 90%;
 }

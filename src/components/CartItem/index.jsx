@@ -12,7 +12,9 @@ const CartItem = ({product, quantity}) => {
     return (
         <article className='row' >
             <img src={product.img} alt={product.name} />
-            <div className='name'>{product.name}</div>
+            <div className='name'>{product.name}
+                <button className='link' onClick={() => actualizarCantidadCarrito(0)}>Eliminar</button>
+            </div>
             <ItemCount stockInicial={product.stock} cantidadInicial={quantity} onAddCallback={actualizarCantidadCarrito} existeEnCarrito={true} />
             <div className='total'>${quantity * product.price}</div>
         </article>

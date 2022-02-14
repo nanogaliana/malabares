@@ -2,8 +2,7 @@ import ItemList from '../ItemList';
 import './styles.css';
 import { useState,useEffect } from 'react'
 import { ImSpinner9 } from 'react-icons/im';
-
-const URLbase = "http://localhost:3001/products";
+import { getProducts } from "../../database/firebase";
 
 const ItemListContainer = ({categoryId}) => {
   const [products, setProducts] = useState([]);
@@ -12,18 +11,39 @@ const ItemListContainer = ({categoryId}) => {
 
   useEffect(() => {
     console.log('categoria:' + (categoryId === undefined? 'TODOS': categoryId));
-    let url = URLbase + (categoryId === undefined? '': '?category=' + categoryId);
+    // const URLbase = "http://localhost:3001/products";
+    // let url = URLbase + (categoryId === undefined? '': '?category=' + categoryId);
+    // setIsLoading(true);
+    // fetch(url)
+    //   .then((response) => response.json())
+    //   .then((json) => setProducts(json))
+    //   .catch((err) => setError(err))
+    //   .finally(() => setIsLoading(false));
 
-    setIsLoading(true);
-    fetch(url)
-      .then((response) => response.json())
-      .then((json) => setProducts(json))
-      .catch((err) => setError(err))
-      .finally(() => setIsLoading(false));
+    let productsCollection;
+    if (categoryId === undefined) {
+      productsCollection = getProducts().orderBy("category","desc");
+    } else {
+      productsCollection = getProducts().where("category", "==", categoryId);
+    }
+    
+    const getDataFromFirestore = async () => {
+      setIsLoading(true);
+      try {
+        const response = await productsCollection.get();
+        if (response.empty) console.log("No hay productos");
+        setProducts(response.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      } catch (err) {
+        setError(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    getDataFromFirestore();
   }, [categoryId]);
 
   if (error) {
-    return <p>Ha habido un error: {error.message}</p>;
+    return <p>Error: {error.message}</p>;
   }
 
   return (

@@ -11,7 +11,7 @@ const Cart = () => {
     <>
       {cart.length === 0 ? (
         <div className='carritoVacio'>No hay artículos en el carrito.<br/>
-        <Link to="/">Ver el catálogo</Link>
+          <Link to="/">Ver el catálogo</Link>
         </div>
       ) : (
         <>

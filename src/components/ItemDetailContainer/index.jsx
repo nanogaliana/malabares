@@ -2,17 +2,27 @@ import { useState,useEffect } from 'react'
 import { ImSpinner9 } from 'react-icons/im';
 import ItemDetail from '../ItemDetail';
 import './styles.css';
+import { getProduct } from "../../database/firebase";
 
 const ItemDetailContainer = ({productId}) => {
   const [product, setProduct] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const URL = `http://localhost:3001/products/${productId}`;
+    console.log('producto:' + productId);
     setIsLoading(true);
-    fetch(URL)
-      .then((rta) => rta.json())
-      .then((data) => setProduct(data))
+
+    // const URL = `http://localhost:3001/products/${productId}`;
+    // fetch(URL)
+    //   .then((rta) => rta.json())
+    //   .then((data) => setProduct(data))
+    //   .finally(() => setIsLoading(false));
+    
+    getProduct(productId).get()
+      .then((response) => {
+        if (!response.exists) console.log(`El producto {productId} no existe`);
+        setProduct({ ...response.data(), id: response.id });
+      })
       .finally(() => setIsLoading(false));
   }, [productId]);
 

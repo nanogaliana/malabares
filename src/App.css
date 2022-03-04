@@ -83,6 +83,11 @@ h1 {font-weight: bold; margin-bottom: 1vh;}
 .preguntasFrecuentes    {padding: 2vh;}
 .preguntasFrecuentes h3 {margin-top: 2vh; font-style: italic;}
 
-.carrito {width:100%;}
-.carritoList {border-top:1px dashed cadetblue;}
-.articuloCarrito {font-size:80%;}
+.validation {font-size: 80%;color:red;}
+
+table.compra {
+  width: 60%;
+  text-align: center;
+  margin-top: 1ex;
+}
+table.compra th {font-weight: bold;}

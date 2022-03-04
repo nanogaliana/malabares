@@ -9,6 +9,8 @@ import CategoriaPage from './pages/CategoriaPage';
 import PreguntasPage from './pages/PreguntasPage';
 import ContactoPage from './pages/ContactoPage';
 import CarritoPage from './pages/CarritoPage';
+import GraciasPage from './pages/GraciasPage';
+import AdminPage from './pages/AdminPage';
 import NotFoundPage from "./pages/NotFoundPage";
 import { CartProvider } from "./context/CartContext";
 
@@ -35,6 +37,8 @@ function App() {
               <Route path="contacto" element={<ContactoPage />} />
               <Route path="preguntas-frecuentes" element={<PreguntasPage />} />
               <Route path="carrito" element={<CarritoPage />} />
+              <Route path="gracias/:orderId" element={<GraciasPage />} />
+              <Route path="admin" element={<AdminPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Routes>

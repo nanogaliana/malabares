@@ -6,7 +6,7 @@ import { useCart } from '../../context/CartContext';
 
 const ItemDetail = ({product}) => {
     const navigate = useNavigate();
-    const { cart, addItem, existeItem } = useCart();
+    const { addItem, existeItem } = useCart();
 
     const [cantidadCarrito, setCantidadCarrito] = useState(0);
     const agregarCantidadAlCarrito = (cantidad) => {
@@ -46,7 +46,7 @@ const ItemDetail = ({product}) => {
                     <ItemCount stockInicial={product.stock} cantidadInicial={cantInicial} onAddCallback={agregarCantidadAlCarrito} existeEnCarrito={existeEnCarrito} />
                 ) : (
                     <>
-                        <p className='info'>El carrito tiene {cantidadCarrito} unidades</p>
+                        <p className='info'>El carrito tiene {cantidadCarrito} unidades de este producto</p>
                         <button className="btn" onClick={() => navigate('/carrito')}>Ver Carrito</button>
                     </>
                 )}

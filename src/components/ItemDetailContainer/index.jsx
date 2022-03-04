@@ -20,7 +20,7 @@ const ItemDetailContainer = ({productId}) => {
     
     getProduct(productId).get()
       .then((response) => {
-        if (!response.exists) console.log(`El producto {productId} no existe`);
+        if (!response.exists) console.log(`El producto ${productId} no existe`);
         setProduct({ ...response.data(), id: response.id });
       })
       .finally(() => setIsLoading(false));

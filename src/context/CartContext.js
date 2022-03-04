@@ -37,8 +37,28 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  const clearAll = () => {
+    setCart([]);
+    console.log('- Elimino el Carrito');
+  };
+
+  const getQuantity = () => {
+    let total = 0;
+    cart.forEach((item) => {
+      total += item.quantity;
+    });
+    return total;
+  };
+  const getTotal = () => {
+    let total = 0;
+    cart.forEach((item) => {
+      total += item.product.price * item.quantity;
+    });
+    return total;
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addItem, existeItem }}>
+    <CartContext.Provider value={{ cart, addItem, existeItem, clearAll, getQuantity, getTotal }}>
       {children}
     </CartContext.Provider>
   );

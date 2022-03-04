@@ -3,7 +3,7 @@ import ItemCount from '../ItemCount';
 import { useCart } from '../../context/CartContext';
 
 const CartItem = ({product, quantity}) => {
-    const { cart, addItem } = useCart();
+    const { addItem } = useCart();
 
     const actualizarCantidadCarrito = (cantidad) => {
         addItem(product,cantidad);

@@ -19,3 +19,10 @@ export const getProducts = () => {
 export const getProduct = (productId) => {
     return getProducts().doc(productId);
 }
+
+export const getOrders = () => {
+    return getFirestore().collection("orders");
+}
+export const getOrder = (orderId) => {
+    return getOrders().doc(orderId);
+}

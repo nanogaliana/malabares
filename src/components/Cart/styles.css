@@ -1,3 +1,14 @@
-.carritoVacio {
-    margin: 0 0 20px 20px;
+.carritoList {border-top:1px dashed cadetblue;}
+.articuloCarrito {font-size:80%;}
+
+form.carrito {
+    display:flex; flex-direction:column;
+    padding: 1ex;
+}
+form.carrito .sameLine {
+    margin-bottom: 0.5ex;
+}
+form.carrito label {
+    width: 12ex;
+    display: inline-block;
 }

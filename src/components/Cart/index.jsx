@@ -10,6 +10,7 @@ const Cart = () => {
   const [name, setName] = React.useState("");
   const [phone, setPhone] = React.useState("");
   const [email, setEmail] = React.useState("");
+  const [email2, setEmail2] = React.useState("");
   const [validation, setValidation] = React.useState("");
   
   const {cart, getTotal, clearAll} = useCart();
@@ -22,6 +23,10 @@ const Cart = () => {
     setValidation("");
     if (!name || !phone || !email) {
       setValidation("Por favor llene los campos");
+      return false;
+    }
+    if (email !== email2) {
+      setValidation("El email no coincide");
       return false;
     }
 
@@ -64,15 +69,19 @@ const Cart = () => {
             <h1>Complete sus datos</h1>
             <div className='sameLine'>
               <label htmlFor="name">Nombre</label>
-              <input type="text" id="name" name="name" placeholder="Escriba su nombre" value={name} onChange={(e) => setName(e.target.value)} />
+              <input type="text" id="name" name="name" placeholder="Ingrese su nombre" value={name} onChange={(e) => setName(e.target.value)} />
             </div>
             <div className='sameLine'>
               <label htmlFor="phone">Teléfono</label>
-              <input type="number" id="phone" name="phone" placeholder="Escriba su teléfono" value={phone} onChange={(e) => setPhone(e.target.value)} />
+              <input type="number" id="phone" name="phone" placeholder="Ingrese su teléfono" value={phone} onChange={(e) => setPhone(e.target.value)} />
             </div>
             <div className='sameLine'>
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="Escriba su email" value={email} onChange={(e) => setEmail(e.target.value)} />
+              <input type="email" id="email" name="email" placeholder="Ingrese su email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            </div>
+            <div className='sameLine'>
+              <label htmlFor="email2"></label>
+              <input type="email" id="email2" name="email2" placeholder="Reingrese su email" value={email2} onChange={(e) => setEmail2(e.target.value)} />
             </div>
             {(validation === ''? '': <div className="validation">{validation}</div>)}
             <div className='sameLine'>

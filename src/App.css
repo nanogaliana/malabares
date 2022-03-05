@@ -83,11 +83,9 @@ h1 {font-weight: bold; margin-bottom: 1vh;}
 .preguntasFrecuentes    {padding: 2vh;}
 .preguntasFrecuentes h3 {margin-top: 2vh; font-style: italic;}
 
-.validation {font-size: 80%;color:red;}
+.validation {font-size: 80%; color:red;}
 
-table.compra {
-  width: 60%;
-  text-align: center;
-  margin-top: 1ex;
-}
+table.compra {width: 60%; text-align: center; margin-top: 1ex;}
 table.compra th {font-weight: bold;}
+
+div.error {color:red; line-height: 1.5;}
